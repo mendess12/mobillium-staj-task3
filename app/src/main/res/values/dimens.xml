@@ -10,6 +10,8 @@
     <dimen name="margin_38dp">38dp</dimen>
 
 
+    <dimen name="text_size_1sp">1sp</dimen>
+    <dimen name="text_size_8sp">8sp</dimen>
     <dimen name="margin_16sp">16sp</dimen>
     <dimen name="margin_20sp">20sp</dimen>
     <dimen name="margin_32sp">32sp</dimen>
