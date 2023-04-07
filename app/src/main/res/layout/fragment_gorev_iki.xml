@@ -1,14 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_200"
     tools:context=".ikincigorev.GorevIkiFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/welcomeGameTv"
+        style="@style/medium_20sp_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16sp"
+        android:text="@string/welcome_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/randomNumberTv"
+        style="@style/medium_32sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/random_number"
+        app:layout_constraintBottom_toTopOf="@+id/infoTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeGameTv" />
+
+    <TextView
+        android:id="@+id/infoTv"
+        style="@style/medium_16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        android:text="@string/you_won"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/oneButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/one"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/twoButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/two"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/threeButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/three"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/fourButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/four"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/fiveButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/five"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/sixButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/six"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/sevenButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/eightButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/nineButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/clearButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/zeroButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+
+            <Button
+                android:id="@+id/guessButton"
+                style="@style/medium_20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:text="@string/guess"
+                app:cornerRadius="@dimen/margin_16dp"
+                app:strokeColor="@color/purple_200"
+                app:strokeWidth="@dimen/margin_2dp" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

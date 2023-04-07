@@ -31,11 +31,13 @@ class GorevBirFragment : Fragment() {
         binding.switcher.setOnCheckedChangeListener { buttonView, isChecked ->
 
             if (isChecked){
-                observeLiveData()
+                //observeLiveData()
+                binding.countTv.text = "View Model Count : ${viewModelCount.toString()}"
                 binding.increaseCounterButton.setOnClickListener {
                     gorevBirVM.getCounter()
                     viewModelCount = gorevBirVM.count
-                    observeLiveData()
+                    binding.countTv.text = viewModelCount.toString()
+                    //observeLiveData()
                 }
             }else{
                 binding.countTv.text = "Count : ${count.toString()}"
@@ -47,9 +49,9 @@ class GorevBirFragment : Fragment() {
         }
     }
 
-    fun observeLiveData (){
+   /* fun observeLiveData (){
         gorevBirVM.countLiveData.observe(viewLifecycleOwner){
             binding.countTv.text = "View model count : ${it.toString()}"
         }
-    }
+    }*/
 }

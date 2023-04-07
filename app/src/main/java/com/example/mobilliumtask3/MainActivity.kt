@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
         navigationController = Navigation.findNavController(this,R.id.fragment)
-        navigationController.navigateUp()
+
     }
 }

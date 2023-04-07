@@ -7,6 +7,22 @@
     <string name="gorev3">Görev3</string>
     <string name="use_view_model">Use ViewModel</string>
     <string name="count">0</string>
+    <string name="welcome_game">Welcome to the game</string>
+    <string name="random_number">W</string>
+    <string name="you_won">congratulations you won</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="clear">Clear</string>
+    <string name="guess">Guess</string>
+    <string name="try_again">Try again</string>
     <string name="increase_counter">INCREASE COUNTER</string>
 
 </resources>
