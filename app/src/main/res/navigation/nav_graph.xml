@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mobilliumtask3.MainFragment"
+        android:label="fragment_main_fragment"
+        tools:layout="@layout/fragment_main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_gorevBirFragment"
+            app:destination="@id/gorevBirFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gorevIkiFragment"
+            app:destination="@id/gorevIkiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gorevBirFragment"
+        android:name="com.example.mobilliumtask3.birincigorev.GorevBirFragment"
+        android:label="fragment_gorev_bir"
+        tools:layout="@layout/fragment_gorev_bir" />
+    <fragment
+        android:id="@+id/gorevIkiFragment"
+        android:name="com.example.mobilliumtask3.ikincigorev.GorevIkiFragment"
+        android:label="fragment_gorev_iki"
+        tools:layout="@layout/fragment_gorev_iki" />
+</navigation>

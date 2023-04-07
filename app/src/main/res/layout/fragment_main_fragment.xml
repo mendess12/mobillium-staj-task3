@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    tools:context=".MainFragment">
+
+    <Button
+        android:id="@+id/gorev1Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="@string/gorev1"
+        android:textAllCaps="false"
+        style="@style/medium_20sp"
+        app:cornerRadius="@dimen/margin_8dp"
+        app:strokeWidth="@dimen/margin_2dp"
+        app:layout_constraintBottom_toTopOf="@+id/gorev2Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/gorev2Button"
+        android:layout_width="@dimen/margin_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="@string/gorev2"
+        android:textAllCaps="false"
+        style="@style/medium_20sp"
+        app:cornerRadius="@dimen/margin_8dp"
+        app:strokeWidth="@dimen/margin_2dp"
+        app:layout_constraintBottom_toTopOf="@+id/gorev3Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gorev1Button" />
+
+    <Button
+        android:id="@+id/gorev3Button"
+        android:layout_width="@dimen/margin_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="@string/gorev3"
+        android:textAllCaps="false"
+        style="@style/medium_20sp"
+        app:cornerRadius="@dimen/margin_8dp"
+        app:strokeWidth="@dimen/margin_2dp"
+        app:strokeColor="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gorev2Button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MobilliumTask3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gorev1">Görev1</string>
+    <string name="gorev2">Görev2</string>
+    <string name="gorev3">Görev3</string>
+    <string name="use_view_model">Use ViewModel</string>
+    <string name="count">0</string>
+    <string name="increase_counter">INCREASE COUNTER</string>
+
 </resources>
