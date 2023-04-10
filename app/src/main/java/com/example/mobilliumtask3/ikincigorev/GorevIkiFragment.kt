@@ -36,16 +36,18 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
             stateGuess()
         }
 
-        binding.zeroButton.setOnClickListener(this)
-        binding.oneButton.setOnClickListener(this)
-        binding.twoButton.setOnClickListener(this)
-        binding.threeButton.setOnClickListener(this)
-        binding.fourButton.setOnClickListener(this)
-        binding.fiveButton.setOnClickListener(this)
-        binding.sixButton.setOnClickListener(this)
-        binding.sevenButton.setOnClickListener(this)
-        binding.eightButton.setOnClickListener(this)
-        binding.nineButton.setOnClickListener(this)
+        binding.apply {
+            zeroButton.setOnClickListener(this@GorevIkiFragment)
+            oneButton.setOnClickListener(this@GorevIkiFragment)
+            twoButton.setOnClickListener(this@GorevIkiFragment)
+            threeButton.setOnClickListener(this@GorevIkiFragment)
+            fourButton.setOnClickListener(this@GorevIkiFragment)
+            fiveButton.setOnClickListener(this@GorevIkiFragment)
+            sixButton.setOnClickListener(this@GorevIkiFragment)
+            sevenButton.setOnClickListener(this@GorevIkiFragment)
+            eightButton.setOnClickListener(this@GorevIkiFragment)
+            nineButton.setOnClickListener(this@GorevIkiFragment)
+        }
     }
 
     private fun stateGuess() {
