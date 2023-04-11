@@ -11,11 +11,8 @@ import com.example.mobilliumtask3.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
 
-    private lateinit var binding : FragmentDetailBinding
-    private val viewModel : GorevIkiViewModel by activityViewModels()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var binding: FragmentDetailBinding
+    private val viewModel: GorevIkiViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

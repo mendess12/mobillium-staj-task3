@@ -36,10 +36,5 @@ class MainFragment : Fragment() {
             val action = MainFragmentDirections.actionMainFragmentToGorevIkiFragment()
             findNavController().navigate(action)
         }
-
-        binding.gorev2Button.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToGorevIkiFragment()
-            findNavController().navigate(action)
-        }
     }
 }
