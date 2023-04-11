@@ -5,13 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.mobilliumtask3.R
 import com.example.mobilliumtask3.databinding.FragmentGorevIkiBinding
 
 class GorevIkiFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentGorevIkiBinding
-    private val viewModel: GorevIkiViewModel by viewModels()
+    private val viewModel: GorevIkiViewModel by activityViewModels()
     private var guessNumber: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,7 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         binding = FragmentGorevIkiBinding.bind(view)
 
         viewModel.generateRandomNumber()
+        println(viewModel.randomNumber)
         observeLiveData()
         binding.guessButton.setOnClickListener {
             stateGuess()
@@ -47,6 +49,10 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
             sevenButton.setOnClickListener(this@GorevIkiFragment)
             eightButton.setOnClickListener(this@GorevIkiFragment)
             nineButton.setOnClickListener(this@GorevIkiFragment)
+        }
+
+        binding.randomNumberTv.setOnClickListener {
+            findNavController().navigate(R.id.action_gorevIkiFragment_to_detailFragment)
         }
     }
 

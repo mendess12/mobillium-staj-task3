@@ -6,7 +6,7 @@ import kotlin.random.Random
 
 class GorevIkiViewModel : ViewModel() {
 
-    private var randomNumber = 0
+    var randomNumber = 0
     private var randomCharacter = 'A'
     val liveData = MutableLiveData<Char>()
 
