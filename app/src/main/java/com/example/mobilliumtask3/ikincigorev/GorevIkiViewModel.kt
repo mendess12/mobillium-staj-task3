@@ -7,6 +7,8 @@ import kotlin.random.Random
 class GorevIkiViewModel : ViewModel() {
 
     var randomNumber = 0
+    var selectNumber : Int ?= null
+    val selectNumberLiveData = MutableLiveData<String>()
     private var randomCharacter = 'A'
     val liveData = MutableLiveData<Char>()
 
@@ -18,7 +20,11 @@ class GorevIkiViewModel : ViewModel() {
         randomCharacter = ('A'..'Z').random()
         liveData.postValue(randomCharacter)
     }
-    fun isCorrectGuess(guess : Int): Boolean{
-        return guess == randomNumber
+    fun isCorrectGuess(){
+        if (selectNumber == randomNumber){
+            selectNumberLiveData.postValue("win")
+        }else{
+            selectNumberLiveData.postValue("try again")
+        }
     }
 }

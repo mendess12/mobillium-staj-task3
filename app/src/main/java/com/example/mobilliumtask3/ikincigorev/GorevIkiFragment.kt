@@ -13,7 +13,6 @@ import com.example.mobilliumtask3.databinding.FragmentGorevIkiBinding
 class GorevIkiFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentGorevIkiBinding
     private val viewModel: GorevIkiViewModel by activityViewModels()
-    private var guessNumber: Int? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,11 +26,10 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentGorevIkiBinding.bind(view)
 
-        viewModel.generateRandomNumber()
         println(viewModel.randomNumber)
         observeLiveData()
         binding.guessButton.setOnClickListener {
-            stateGuess()
+           selectNumberObserveLiveData()
         }
 
         binding.apply {
@@ -52,19 +50,6 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun stateGuess() {
-        if (viewModel.isCorrectGuess(guessNumber!!)) {
-            binding.infoTv.setText(R.string.you_won)
-            binding.clearButton.setOnClickListener {
-                binding.infoTv.setText(R.string.welcome_game)
-                viewModel.generateRandomNumber()
-                viewModel.generateRandomCharacter()
-            }
-        } else {
-            binding.infoTv.setText(R.string.try_again)
-        }
-    }
-
     override fun onClick(v: View?) {
         //super.onClick(v)
         when (v?.id) {
@@ -82,14 +67,29 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setGuessNumber(number: Int) {
-        guessNumber = number
-        binding.infoTv.text = guessNumber.toString()
+        viewModel.selectNumber = number
+        binding.infoTv.text = viewModel.selectNumber.toString()
     }
 
     private fun observeLiveData() {
         viewModel.liveData.observe(viewLifecycleOwner) {
             binding.randomNumberTv.text = it.toString()
         }
-        viewModel.generateRandomCharacter()
+    }
+
+    private fun selectNumberObserveLiveData() {
+        viewModel.selectNumberLiveData.observe(viewLifecycleOwner) {
+            if (it == "win") {
+                binding.infoTv.setText(R.string.you_won)
+                binding.clearButton.setOnClickListener {
+                    binding.infoTv.setText(R.string.welcome_game)
+                    viewModel.generateRandomNumber()
+                    viewModel.generateRandomCharacter()
+                }
+            } else {
+                binding.infoTv.setText(R.string.try_again)
+            }
+        }
+        viewModel.isCorrectGuess()
     }
 }
