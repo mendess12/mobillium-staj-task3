@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mobilliumtask3.R
 import com.example.mobilliumtask3.databinding.FragmentGorevIkiBinding
+import com.example.mobilliumtask3.util.StateGuess
 
 class GorevIkiFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentGorevIkiBinding
@@ -29,7 +30,8 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         println(viewModel.randomNumber)
         observeLiveData()
         binding.guessButton.setOnClickListener {
-           selectNumberObserveLiveData()
+
+            viewModel.isCorrectGuess()
         }
 
         binding.apply {
@@ -48,10 +50,15 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         binding.randomNumberTv.setOnClickListener {
             findNavController().navigate(R.id.action_gorevIkiFragment_to_detailFragment)
         }
+
+        binding.clearButton.setOnClickListener {
+            binding.infoTv.setText(R.string.welcome_game)
+            viewModel.generateRandomNumber()
+            viewModel.generateRandomCharacter()
+        }
     }
 
     override fun onClick(v: View?) {
-        //super.onClick(v)
         when (v?.id) {
             R.id.zeroButton -> setGuessNumber(0)
             R.id.oneButton -> setGuessNumber(1)
@@ -75,21 +82,13 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         viewModel.liveData.observe(viewLifecycleOwner) {
             binding.randomNumberTv.text = it.toString()
         }
-    }
 
-    private fun selectNumberObserveLiveData() {
         viewModel.selectNumberLiveData.observe(viewLifecycleOwner) {
-            if (it == "win") {
-                binding.infoTv.setText(R.string.you_won)
-                binding.clearButton.setOnClickListener {
-                    binding.infoTv.setText(R.string.welcome_game)
-                    viewModel.generateRandomNumber()
-                    viewModel.generateRandomCharacter()
-                }
-            } else {
-                binding.infoTv.setText(R.string.try_again)
+            when (it) {
+                StateGuess.WIN.toString() -> binding.infoTv.setText(R.string.you_won)
+                StateGuess.AGAIN.toString() -> binding.infoTv.setText(R.string.try_again)
             }
+
         }
-        viewModel.isCorrectGuess()
     }
 }
