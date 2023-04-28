@@ -9,9 +9,14 @@ class GorevIkiViewModel : ViewModel() {
 
     var randomNumber = 0
     var selectNumber: Int? = null
-    val selectNumberLiveData = MutableLiveData<String>()
+    val selectNumberLiveData = MutableLiveData<StateGuess>()
     private var randomCharacter = 'A'
     val liveData = MutableLiveData<Char>()
+
+    init {
+        generateRandomNumber()
+        generateRandomCharacter()
+    }
 
     fun generateRandomNumber() {
         randomNumber = Random.nextInt(0, 9)
@@ -24,9 +29,9 @@ class GorevIkiViewModel : ViewModel() {
 
     fun isCorrectGuess() {
         if (selectNumber == randomNumber) {
-            selectNumberLiveData.postValue(StateGuess.WIN.toString())
+            selectNumberLiveData.postValue(StateGuess.WIN)
         } else {
-            selectNumberLiveData.postValue(StateGuess.AGAIN.toString())
+            selectNumberLiveData.postValue(StateGuess.AGAIN)
         }
     }
 

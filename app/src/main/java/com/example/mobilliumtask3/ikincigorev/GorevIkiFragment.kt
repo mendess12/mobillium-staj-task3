@@ -1,6 +1,7 @@
 package com.example.mobilliumtask3.ikincigorev
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.example.mobilliumtask3.databinding.FragmentGorevIkiBinding
 import com.example.mobilliumtask3.util.StateGuess
 
 class GorevIkiFragment : Fragment(), View.OnClickListener {
+
     private lateinit var binding: FragmentGorevIkiBinding
     private val viewModel: GorevIkiViewModel by activityViewModels()
 
@@ -19,7 +21,6 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_gorev_iki, container, false)
     }
 
@@ -27,10 +28,9 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentGorevIkiBinding.bind(view)
 
-        println(viewModel.randomNumber)
+        Log.d("Message", viewModel.randomNumber.toString())
         observeLiveData()
         binding.guessButton.setOnClickListener {
-
             viewModel.isCorrectGuess()
         }
 
@@ -84,11 +84,12 @@ class GorevIkiFragment : Fragment(), View.OnClickListener {
         }
 
         viewModel.selectNumberLiveData.observe(viewLifecycleOwner) {
-            when (it) {
-                StateGuess.WIN.toString() -> binding.infoTv.setText(R.string.you_won)
-                StateGuess.AGAIN.toString() -> binding.infoTv.setText(R.string.try_again)
+            it?.let {
+                when (it) {
+                    StateGuess.WIN -> binding.infoTv.setText(R.string.you_won)
+                    StateGuess.AGAIN -> binding.infoTv.setText(R.string.try_again)
+                }
             }
-
         }
     }
 }
