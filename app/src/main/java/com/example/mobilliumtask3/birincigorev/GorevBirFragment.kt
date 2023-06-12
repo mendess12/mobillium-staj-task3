@@ -1,5 +1,6 @@
 package com.example.mobilliumtask3.birincigorev
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,8 +11,8 @@ import com.example.mobilliumtask3.R
 import com.example.mobilliumtask3.databinding.FragmentGorevBirBinding
 
 class GorevBirFragment : Fragment() {
-
-    private lateinit var binding : FragmentGorevBirBinding
+  
+    private lateinit var binding: FragmentGorevBirBinding
     var count = 0
     val viewModel: GorevBirViewModel by viewModels()
 
