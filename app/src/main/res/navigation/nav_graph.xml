@@ -26,5 +26,15 @@
         android:id="@+id/gorevIkiFragment"
         android:name="com.example.mobilliumtask3.ikincigorev.GorevIkiFragment"
         android:label="fragment_gorev_iki"
-        tools:layout="@layout/fragment_gorev_iki" />
+        tools:layout="@layout/fragment_gorev_iki" >
+        <action
+            android:id="@+id/action_gorevIkiFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.mobilliumtask3.ikincigorev.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+
 </navigation>

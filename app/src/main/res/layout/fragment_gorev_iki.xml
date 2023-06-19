@@ -8,17 +8,6 @@
     tools:context=".ikincigorev.GorevIkiFragment">
 
     <TextView
-        android:id="@+id/welcomeGameTv"
-        style="@style/medium_20sp_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_16sp"
-        android:text="@string/welcome_game"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/randomNumberTv"
         style="@style/medium_32sp"
         android:layout_width="wrap_content"
@@ -27,15 +16,14 @@
         app:layout_constraintBottom_toTopOf="@+id/infoTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeGameTv" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/infoTv"
         style="@style/medium_16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_16dp"
-        android:text="@string/you_won"
+        android:text="@string/welcome_game"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -89,6 +77,7 @@
                 app:strokeColor="@color/purple_200"
                 app:strokeWidth="@dimen/margin_2dp" />
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -130,6 +119,7 @@
                 app:strokeWidth="@dimen/margin_2dp" />
 
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -170,6 +160,7 @@
                 app:strokeColor="@color/purple_200"
                 app:strokeWidth="@dimen/margin_2dp" />
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">

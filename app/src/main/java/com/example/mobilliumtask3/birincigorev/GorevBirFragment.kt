@@ -11,6 +11,7 @@ import com.example.mobilliumtask3.R
 import com.example.mobilliumtask3.databinding.FragmentGorevBirBinding
 
 class GorevBirFragment : Fragment() {
+  
     private lateinit var binding: FragmentGorevBirBinding
     var count = 0
     val viewModel: GorevBirViewModel by viewModels()
@@ -26,7 +27,7 @@ class GorevBirFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentGorevBirBinding.bind(view)
 
-        binding.switcher.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switcher.setOnCheckedChangeListener { _, isChecked ->
 
             if (isChecked) {
                 observeLiveData()
